@@ -1,9 +1,10 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
-//name: Basic Calculator v0.1
+//name: Basic Calculator
 //a quick toy to perform simple operations with one or two inputs
 //Author: Brandon Jameson
-//Github: put in link here
+//Github: https://github.com/JamesonGG/Basic-Calculator
 public class Calculator {
 	static Scanner sc;
 	public static float a;
@@ -20,39 +21,33 @@ public class Calculator {
 		float valueA = a;
 		float valueB = b;
 		char op = operation;
-		if (op == '+') {	
+		
+		switch (op) {
+		
+		case '+':
 			return Operations.add(valueA, valueB);
-		}
-		if (op == '-') {	
+		case '-':
 			return Operations.subtract(valueA, valueB);
-		}
-		if (op == '*') {	
+		case '*':
 			return Operations.multiply(valueA, valueB);
-		}
-		if (op == '/') {	
+		case '/':
 			return Operations.divide(valueA, valueB);
-		}
-		if (op == '%') {	
+		case '%':
 			return Operations.modulo(valueA, valueB);
-		}
-		if (op == '^') {	
+		case '^':
 			return Operations.power(valueA, valueB);
-		}
-		if (op == '!') {	
+		case '!':
 			return Operations.factorial(valueA);
-		}
-		if (op == 's') {	
+		case 's':
 			return (float) Operations.sine(valueA);
-		}
-		if (op == 'c') {	
+		case 'c':
 			return (float) Operations.cosine(valueA);
-		}
-		if (op == 't') {	
+		case 't':
 			return (float) Operations.tangent(valueA);
-		}
-		if (op == '|') {
+		case '|':
 			return Operations.absolute(valueA);
 		}
+		System.out.println("ERROR: Unknown operator.");
 		return 0f;
 	}
 	
@@ -69,6 +64,4 @@ public class Calculator {
 		System.out.println("Please input your operation: ");
 		operation = sc.next().charAt(0);
 	}
-
 }
-
