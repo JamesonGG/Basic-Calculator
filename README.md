@@ -5,7 +5,7 @@
 
 -You must enter two inputs, they do not have to be float's.
 
--For operations that only require one value (e.g. Absolute, and Factorial), only the first input (topmosst box) will be computed. The second input is discarded.
+-For operations that only require one value (e.g. Absolute, and Factorial), only the first input (top-most box) will be computed. The second input is discarded.
 
 ## TO-DO
   -Display text in window next to both input fields.
