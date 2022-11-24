@@ -68,4 +68,12 @@ public class Operations {
 		}
 		return a;
 	}
+	
+	public static float imperialConversion (float a) {
+		return (float)(a / 2.54);
+	}
+	
+	public static float decimalConversion (float a) {
+		return (float)(a * 2.54);
+	}
 }

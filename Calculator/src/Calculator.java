@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 //name: Basic Calculator
@@ -9,59 +8,48 @@ public class Calculator {
 	static Scanner sc;
 	public static float a;
 	public static float b;
-	public static char operation;
+	public static String operation;
+	public static float calculatorOutput;
 	
 	public static void main(String[] args) {
-		Input();
-		System.out.println(result(operation, a, b));
+		calculatorOutput = result(operation, a, b);
 	}
 
 	//calculates the result from one of the Operations.
-	public static float result(char operation, float a, float b) {
+	public static float result(String operation, float a, float b) {
 		float valueA = a;
 		float valueB = b;
-		char op = operation;
+		String op = operation;
 		
 		switch (op) {
 		
-		case '+':
+		case "add":
 			return Operations.add(valueA, valueB);
-		case '-':
+		case "subtract":
 			return Operations.subtract(valueA, valueB);
-		case '*':
+		case "multiply":
 			return Operations.multiply(valueA, valueB);
-		case '/':
+		case "divide":
 			return Operations.divide(valueA, valueB);
-		case '%':
+		case "modulo":
 			return Operations.modulo(valueA, valueB);
-		case '^':
+		case "power":
 			return Operations.power(valueA, valueB);
-		case '!':
+		case "factorial":
 			return Operations.factorial(valueA);
-		case 's':
+		case "sine":
 			return (float) Operations.sine(valueA);
-		case 'c':
+		case "cosine":
 			return (float) Operations.cosine(valueA);
-		case 't':
+		case "tangent":
 			return (float) Operations.tangent(valueA);
-		case '|':
+		case "absolute":
 			return Operations.absolute(valueA);
+		case "dec2imp":
+			return Operations.imperialConversion(valueA);
+		case "imp2dec":
+			return Operations.decimalConversion(valueA);
 		}
-		System.out.println("ERROR: Unknown operator.");
 		return 0f;
-	}
-	
-	//takes the Input of the user.
-	public static void Input() {
-		sc = new Scanner(System.in);
-		System.out.println("Please input your first value: ");
-		a = sc.nextFloat();
-		
-		System.out.println("Please input your second value: ");
-		System.out.println("(Note: this value may be discarded for some operations.)");
-		b = sc.nextFloat();
-		
-		System.out.println("Please input your operation: ");
-		operation = sc.next().charAt(0);
 	}
 }
