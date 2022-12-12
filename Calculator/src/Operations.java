@@ -23,25 +23,14 @@ public class Operations {
 	public static float modulo (float a, float b) {
 		return a % b;
 	}
-		
+	
+	//really tried to avoid Math here, turns out that decimal
+	//power thing is a whole potential project in of itself, maybe
+	//I'll do something like it in C someday.
 	public static float power (float a, float b) {
-		float foo = 0;
-		if (b == 0) {
-			return 1;
-		}
-		else {
-			if (b > 0) {
-				foo = a * power(a, b - 1);
-				if (a % 2 != 0 && a < 0) { //if odd and negative, make foo negative
-					foo *= -1;
-				}
-			}
-			if (b < 0) {
-				foo = 1 / (power(a, -b));
-			}
-		}
-		return foo;
-	}
+		float val = (float) (b * Math.log(a));
+	    return (float)Math.exp(val);
+    }
 
 	public static float factorial (float a) {
 		if (a <= 2) {
